@@ -3,10 +3,12 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom'
 import Routes from './Router'
 import './Screen/css/index.css'
+import ScrollToTop from './ScrollToTop';
 
 const root = createRoot(document.getElementById('medoss'));
 root.render(
     <BrowserRouter>
+        <ScrollToTop />
         <Routes />
     </BrowserRouter>
 );
