@@ -67,11 +67,11 @@ export const routersArray = [
 
             {
                 element: <React.Suspense fallback={<div className="devloading">
-                <TheLoading />
-            </div>}>
+                    <TheLoading />
+                </div>}>
                     <EmailMarketing />
                 </React.Suspense>,
-                path: '/e-postmarknadsforing',
+                path: '/e-postmarknadsforing/',
 
             },
             {
@@ -82,7 +82,7 @@ export const routersArray = [
                     <ContactScreen />
 
                 </React.Suspense>,
-                path: '/contact',
+                path: '/contact/',
 
             },
             {
@@ -91,9 +91,20 @@ export const routersArray = [
                 </div>}>
                     <ServicesScreen />
                 </React.Suspense>,
-                path: '/services',
+                path: '/services/',
 
             },
+            {
+                element: <React.Suspense fallback={<div className="devloading">
+                    <TheLoading />
+                </div>}>
+                    <div>
+                        error
+                    </div>
+                </React.Suspense>,
+                path: '*',
+
+            }
         ]
     }
 ]

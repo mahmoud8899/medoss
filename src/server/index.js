@@ -69,11 +69,11 @@ app.get('/*', async (req, res) => {
     res.contentType('text/html');
 
 
-    if (routes[0].route.path === '*') {
-      res.status(404);
-    } else {
-      res.status(200);
-    }
+    // if (routes[0].route.path === '*') {
+    //   res.status(404);
+    // } else {
+    //   res.status(200);
+    // }
 
     res.send(html);
   })

@@ -40,7 +40,7 @@ export default function Render(req) {
         ${helmet.title.toString()}
         ${helmet.meta.toString()}
         ${helmet.link.toString()}
-        <link rel="stylesheet" href="./css/main.css"  />
+        <link rel="stylesheet" href="/css/main.css"  />
     </head>
 
     <body ${helmet.bodyAttributes.toString()}>
