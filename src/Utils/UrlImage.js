@@ -17,6 +17,8 @@ import thepaper from './image/paper.png'
 import ExtraUi from './image/ui2.png'
 import emailmarketing from './image/email-marketing.png'
 import emailmarketingOne from './image/email-marketing1.png'
+
+
 export const UrlImage = {
     Home : Home,
     TheContact : TheContact,
@@ -36,7 +38,8 @@ export const UrlImage = {
     thepaper : thepaper,
     ExtraUi : ExtraUi,
     emailmarketing : emailmarketing,
-    emailmarketingOne: emailmarketingOne
+    emailmarketingOne: emailmarketingOne,
+   
 
 
 }

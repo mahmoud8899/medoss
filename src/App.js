@@ -1,24 +1,28 @@
-import React from 'react'
-import Footer from './Screen/Pages/footer'
-import NavBar from './Screen/Pages/navbar/index'
+import React, { Fragment } from 'react'
+const Footer = React.lazy(() => import('./Screen/Pages/footer'))
+const NavBar = React.lazy(() => import('./Screen/Pages/navbar/index'))
 import { Outlet } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { Helmet } from "react-helmet";
+import './Screen/css/index.css'
+import TheLoading from './Screen/Components/Login'
+
 
 const App = ({ route }) => {
 
-
-
     return (
-        <div>
-            <Helmet>
-                <title>Med oss</title>
-            </Helmet>
-            <NavBar />
-            <Outlet />
-            <Footer />
+        <Fragment>
+            <React.Suspense fallback={<TheLoading />}>
+                <NavBar />
+            </React.Suspense>
 
-        </div>
+            <Outlet />
+            <React.Suspense fallback={<TheLoading />}>
+                <Footer />
+            </React.Suspense>
+
+
+
+        </Fragment>
     )
 
 }

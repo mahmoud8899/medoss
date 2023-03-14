@@ -7,10 +7,10 @@ export const Logo = () => {
 
     return (
         <Link to='/' className='Link'>
-            <h1 className='Title font-family whitecolor'>
+            <h2 className='Title font-family whitecolor'>
                 med <span>oss</span>
 
-            </h1>
+            </h2>
         </Link>
 
     )

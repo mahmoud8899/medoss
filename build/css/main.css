@@ -1,60 +1,3 @@
-
-.slider {
-    background: white;
-    height: 250px;
-    margin: auto;
-    overflow: hidden;
-    position: relative;
-    width: 1140px;
-}
-
-.slider::before, .slider::after {
-    background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%);
-    content: "";
-    height: 100%;
-    position: absolute;
-    width: 100px;
-    z-index: 2;
-}
-
-.slider::after {
-    right: 0;
-    top: 0;
-    -webkit-transform: rotateZ(180deg);
-    transform: rotateZ(180deg);
-}
-
-.slider::before {
-    left: 0;
-    top: 0;
-}
-
-.slider .slide-track {
-    animation: scroll 30s  linear infinite;
-    display: flex;
-    width: calc(250px * 14);
-
-}
-
-.slider .slide-track:hover {
-    animation-play-state: paused;
-}
-
-.slider .slide {
-    height: 250px;
-    width: 250px;
-    margin: 1rem;
-}
-
-
-
-
-
-
-@keyframes scroll {
-	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-250px * 6))}
-}
 * {
     padding: 0rem;
     margin: 0rem;
@@ -64,13 +7,47 @@
 }
 
 
+ /* START loading  */
 
+.devloading {
+    width: 100%;
+    height: 100vh;
+}
+
+.loading {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    border: 10px solid white;
+    border-radius: 50%;
+    border-top-color: #eee;
+    animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+  
 .flex.flexcolumn.align-items.flexwrap img:hover {
     transition: all 1s ease-out;
     transform: scale3d(1.5, 2, 1.5);
 }
 .Imageanimation {
-    animation: Mahmoud 10s infinite;
+    /* animation: Mahmoud 10s infinite; */
 }
 
 
@@ -199,10 +176,14 @@
 }
 
 .objectcover {
-    object-fit: cover;
+    object-fit:scale-down
 }
 
 .flex.widthThre.flexcolumn.background {
+    margin-left: 1rem;
+}
+
+.onlymargin-left {
     margin-left: 1rem;
 }
 
@@ -211,8 +192,9 @@
 }
 
 .Image {
-    width: 90%;
-    height: auto;
+    width: 100%;
+    height: 300px;
+   
 }
 
 ._iMage_box {
@@ -302,9 +284,14 @@ input {
 }
 
 .font-family {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Tilt Warp', cursive;
 }
-
+.font-family-des {
+    font-family: 'Noto Sans HK', sans-serif;
+}
+.font-family-name {
+    font-family: 'Noto Sans HK', sans-serif;
+}
 .Title {
     font-size: 40px;
 }
@@ -428,6 +415,9 @@ ul {
 }
 
 @media only screen and (max-width: 1260px) {
+    .h1align {
+        text-align: center;
+    }
     .Title {
         font-size: 30px;
     }

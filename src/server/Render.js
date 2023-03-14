@@ -4,7 +4,7 @@ import { StaticRouter } from "react-router-dom/server";
 import Router from '../Router';
 import { Helmet } from 'react-helmet';
 import Icon from './medoss.ico'
-import {UrlImage} from '../Utils/UrlImage'
+
 
 
 
@@ -24,19 +24,19 @@ export default function Render(req) {
   const helmet = Helmet.renderStatic()
 
   const html = `<!DOCTYPE html>
-        <html ${helmet.htmlAttributes.toString()}>
+        <html lang='sv'>
 
         <head>
         <title>Med Oss</title>      
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-        <meta property="og:description" content="Med Oss är en app- och webbyrå som hjälper dig designa och utveckla din webbplats, app eller ditt spel. Vi är en heltäckande digital byrå med mycket bred kompetens. Genom kundnära samarbete, agila arbetssätt och fokus på lönsamhet tar vi ditt projekt från idé till färdig produkt." />
-        <meta property="og:image" content=${UrlImage.thepaper}  />
-        <meta property="og:image:url"  content=${UrlImage.thepaper}   />
-        <meta property="twitter:image" content=${UrlImage.thepaper}  />
         <link rel="icon" href=${Icon} />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap" rel="stylesheet">
 
+        <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@500&display=swap" rel="stylesheet">
+    
         ${helmet.title.toString()}
         ${helmet.meta.toString()}
         ${helmet.link.toString()}

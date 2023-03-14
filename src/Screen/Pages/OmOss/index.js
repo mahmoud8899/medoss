@@ -4,8 +4,9 @@ import TheImage from '../../Components/TheImage/index'
 import TheButtom from '../../Components/buttom'
 import { Services } from '../Webbdesign/Servec'
 import { Link } from 'react-router-dom'
-import {TheServices} from '../../Components/data/index'
-import {TheSlice} from '../../../Utils/Helps'
+import { TheServices } from '../../Components/data/index'
+import { TheSlice } from '../../../Utils/Helps'
+import MyImage from '../../Components/ImageLazy'
 
 const OmOss = () => {
 
@@ -25,14 +26,18 @@ const OmOss = () => {
                         key={index}
                         className='Link flex flexcolumn align-items flexwrap  widthHalf padding  margin-text box-shadow border-raduisLeft'
                     >
-                        <TheImage Url={item.image} className='_iMage_box' />
+                        <MyImage
+                            image={item.image}
+                            className='_iMage_box'
+                            alt={item.title}
+                        />
 
                         <div className=''>
-                            <h1 className='Title font-family screenColor'>{item.title}</h1>
+                            <h2 className='Title font-family screenColor'>{item.title}</h2>
                         </div>
 
                         <div className='margin-text'>
-                            <span className='des font-family colordes'>
+                            <span className='des font-family-des colordes'>
                                 {TheSlice(item.des)}
                             </span>
 
@@ -42,7 +47,7 @@ const OmOss = () => {
                                 <TheButtom
                                     Title={item.buttom}
                                     ClassBox='padding flex align-items margin-top-two  margin-bottomDev border-radius space-between cursor'
-                                    TitleCss='Name font-family screenColor'
+                                    TitleCss='Name font-family-name screenColor'
                                     IconCss='_icons screenColor ExtraHove'
                                 />
                             </div>

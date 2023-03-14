@@ -33,13 +33,13 @@ const NavBar = () => {
         <div className='background padding'>
             <div className='flex flexrow-reverse '>
 
-                <span className='Name font-family opacity transition cursor'>
+                <span className='Name font-family-name opacity transition cursor'>
                     {InfoContact.telephone}
                 </span>
-                <span className='Name font-family margin'>
+                <span className='Name font-family-name margin'>
                     |
                 </span>
-                <span className='Name font-family opacity transition cursor'>
+                <span className='Name font-family-name opacity transition cursor'>
                     <a href={`mailto:${InfoContact.email}`} className='Link whitecolor'>
                         {InfoContact.email}
                     </a>
@@ -63,7 +63,7 @@ const NavBar = () => {
                             {ListNavBar?.map((item, index) => (
                                 <Link key={index} to={item.link} className='Link whitecolor' >
 
-                                    <li className='Name font-family' >
+                                    <li className='Name font-family-name' >
                                         {item.name}
                                     </li>
                                 </Link>

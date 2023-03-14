@@ -1,13 +1,15 @@
 import React from "react";
 import App from './App'
-import HomeScreen from "./Screen/Pages/Home";
-import Webbdesign from "./Screen/Pages/Webbdesign";
-import {AppScreen} from './Screen/Pages/AppScreen'
-import { TheSEO } from './Screen/Pages/SEO'
-import { Design } from './Screen/Pages/design'
-import { EmailMarketing } from './Screen/Pages/Email'
-import { ContactScreen } from './Screen/Pages/Contact/ContactScreen'
-import { ServicesScreen } from './Screen/Pages/OmOss/ServicesScreen'
+const HomeLozy = React.lazy(() => import('./Screen/Pages/Home'))
+const Webbdesign = React.lazy(() => import('./Screen/Pages/Webbdesign'))
+const AppScreen = React.lazy(() => import('./Screen/Pages/AppScreen'))
+const TheSEO = React.lazy(() => import('./Screen/Pages/SEO'))
+const Design = React.lazy(() => import('./Screen/Pages/design'))
+const EmailMarketing = React.lazy(() => import('./Screen/Pages/Email'))
+const ContactScreen = React.lazy(() => import('./Screen/Pages/Contact/ContactScreen'))
+const ServicesScreen = React.lazy(() => import('./Screen/Pages/OmOss/ServicesScreen'))
+import TheLoading from "./Screen/Components/Login";
+
 
 
 
@@ -20,45 +22,77 @@ export const routersArray = [
         path: '/',
         children: [
             {
-                element: <HomeScreen />,
+                element: <React.Suspense fallback={<div className="devloading">
+                    <TheLoading />
+                </div>}>
+                    <HomeLozy />
+                </React.Suspense>,
                 path: '/',
             },
             {
-                element : <Webbdesign.element />,
-                path : '/web/',
-            
+                element: <React.Suspense fallback={<div className="devloading">
+                    <TheLoading />
+                </div>}>
+                    <Webbdesign />
+                </React.Suspense>,
+                path: '/web/',
+
             },
             {
-                element : <AppScreen/>,
-                path : '/mobilapp/',
-            
+                element: <React.Suspense fallback={<div className="devloading">
+                    <TheLoading />
+                </div>}>
+                    <AppScreen />
+                </React.Suspense>,
+                path: '/mobilapp/',
+
             },
-  
+
             {
-                element : <TheSEO/>,
-                path : '/seo/',
-            
-            },
-            {
-                element : <Design/>,
-                path : '/design/',
-            
-            },
-       
-            {
-                element : <EmailMarketing />,
-                path : '/e-postmarknadsforing',
-            
+                element: <React.Suspense fallback={<TheLoading />}>
+                    <TheSEO />
+                </React.Suspense>,
+                path: '/seo/',
+
             },
             {
-                element : <ContactScreen />,
-                path : '/contact',
-            
+                element: <React.Suspense fallback={<div className="devloading">
+                    <TheLoading />
+                </div>}>
+                    <Design />
+                </React.Suspense>,
+                path: '/design/',
+
+            },
+
+            {
+                element: <React.Suspense fallback={<div className="devloading">
+                <TheLoading />
+            </div>}>
+                    <EmailMarketing />
+                </React.Suspense>,
+                path: '/e-postmarknadsforing',
+
             },
             {
-                element : <ServicesScreen />,
-                path : '/services',
-            
+                element: <React.Suspense fallback={<div className="devloading">
+                    <TheLoading />
+                </div>}>
+
+                    <ContactScreen />
+
+                </React.Suspense>,
+                path: '/contact',
+
+            },
+            {
+                element: <React.Suspense fallback={<div className="devloading">
+                    <TheLoading />
+                </div>}>
+                    <ServicesScreen />
+                </React.Suspense>,
+                path: '/services',
+
             },
         ]
     }

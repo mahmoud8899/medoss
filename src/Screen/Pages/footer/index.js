@@ -21,7 +21,7 @@ const Footer = () => {
                 <ul >
                     {ListNavBar?.map((item, index) => (
                         <Link to={item.link} className='Link whitecolor' key={index}>
-                            <li className='Name font-family margin-topandbottomOne'>
+                            <li className='Name font-family-name margin-topandbottomOne'>
                                  {item.name}
                             </li>
                         </Link>
@@ -38,8 +38,8 @@ const Footer = () => {
 
             <div className='widthThre ExtraWidth margin-text'>
                 <div className='flex flexcolumn'>
-                    <span className='Name font-family'>{InfoContact.ask}</span>
-                    <span className='Name font-family  opacity'>{InfoContact.answer}</span>
+                    <span className='Name font-family-name'>{InfoContact.ask}</span>
+                    <span className='Name font-family-name  opacity'>{InfoContact.answer}</span>
                 </div>
 
 
@@ -47,14 +47,14 @@ const Footer = () => {
                     <TheInput
                         type='email'
                         placeholder='E-postadress*'
-                        className='Input border-radius border placeholder Name font-family inputtest'
+                        className='Input border-radius border placeholder Name font-family-name inputtest'
 
                     />
                 </div>
 
                 <div className='flex flexrow align-items margin-text'>
                     <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" className='IconCheckBox margin-Right' />
-                    <span className='Name font-family opacity'>{InfoContact.agree}</span>
+                    <span className='Name font-family-name opacity'>{InfoContact.agree}</span>
                 </div>
 
 

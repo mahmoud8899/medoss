@@ -1,20 +1,15 @@
-
 import React from 'react'
 import TheButtom from '../../Components/buttom'
 import TheInput from '../../Components/TheInput'
-import TheImage from '../../Components/TheImage'
 import { UrlImage } from '../../../Utils/UrlImage'
+import MyImage from '../../Components/ImageLazy'
+import {ListContact} from '../../Components/data/index'
 
 const Contact = () => {
 
 
 
-    let cont = {
-        title: `
-        Fyll i dina uppgifter nedan sà hör vi av oss och bokar ett möte`,
-        des: `Vi är övertygade om att alla bra samarbeten börjar med ett möte. Orkar du inte vänta kan du alltid ringa oss pà`,
-        telephone: '07327463'
-    }
+
 
 
     return (
@@ -23,10 +18,10 @@ const Contact = () => {
 
                 <div className='firstwidth dev-size padding'>
 
-                    <h1 className='Title font-family screenColor'>{cont.title}</h1>
-                    <div className='margin-topandbottom '>
-                        <span className='des font-family colordes'>
-                            {cont.des} {cont.telephone}
+                    <h2 className='Title font-family screenColor h1align'>{ListContact.title}</h2>
+                    <div className='margin-topandbottomOne h1align'>
+                        <span className='des font-family-des colordes'>
+                            {ListContact.des} {ListContact.telephone}
                         </span>
 
                     </div>
@@ -35,7 +30,7 @@ const Contact = () => {
                     <TheInput
                         type='Namn*'
                         placeholder='Telefon'
-                        className='Input border-radius border placeholder Name font-family borderSolid'
+                        className='Input border-radius border placeholder Name font-family-name borderSolid'
 
                     />
 
@@ -43,7 +38,7 @@ const Contact = () => {
                     <TheInput
                         type='email'
                         placeholder='E-postadress*'
-                        className='Input border-radius border placeholder Name font-family borderSolid'
+                        className='Input border-radius border placeholder Name font-family-name borderSolid'
 
                     />
 
@@ -51,7 +46,7 @@ const Contact = () => {
                     <TheInput
                         type='number'
                         placeholder='Telefon'
-                        className='Input border-radius border placeholder Name font-family borderSolid'
+                        className='Input border-radius border placeholder Name font-family-name borderSolid'
 
                     />
 
@@ -59,7 +54,7 @@ const Contact = () => {
                     <TheInput
                         type='text'
                         placeholder='Meddelande'
-                        className='Input border-radius border placeholder Name font-family borderSolid inputHeight'
+                        className='Input border-radius border placeholder Name font-family-name borderSolid inputHeight'
 
                     />
 
@@ -69,9 +64,10 @@ const Contact = () => {
 
                 <div className='firstwidth dev-size padding flex align-items center order'>
 
-                    <TheImage
-                        Url={UrlImage.TheContact}
+                    <MyImage
+                        image={UrlImage.TheContact}
                         className='Image objectcover'
+                        alt={ListContact.title}
                     />
 
                 </div>

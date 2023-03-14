@@ -12,14 +12,14 @@ export const OssScreen = () => {
         <div className='flex flexrow space-between align-items flexwrap '>
 
             <div className='firstwidth dev-size padding'>
-                <span className='Title font-family opacityText' >{WhoIsUs.us}</span>
+                <h2 className='Title font-family opacityText h1align' >{WhoIsUs.us}</h2>
             </div>
 
             <div className='firstwidth dev-size padding'>
-                <h1 className='Title font-family screenColor'>{WhoIsUs.title}</h1>
+                <h2 className='Title font-family screenColor h1align'>{WhoIsUs.title}</h2>
 
                 <div className='margin-topandbottom '>
-                    <span className='des font-family colordes'>
+                    <span className='des font-family-des colordes'>
                         {WhoIsUs.des}
                     </span>
 
@@ -27,10 +27,10 @@ export const OssScreen = () => {
             </div>
 
             <div className='firstwidth dev-size padding'>
-                <span className='Title font-family screenColor' >{WhoIsUs.choose}</span>
+                <h2 className='Title font-family screenColor h1align' >{WhoIsUs.choose}</h2>
 
                 <div className='margin-topandbottom '>
-                    <span className='des font-family colordes'>
+                    <span className='des font-family-des colordes'>
                         {WhoIsUs.des2}
                     </span>
 

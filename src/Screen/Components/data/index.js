@@ -1,7 +1,22 @@
 import { UrlImage } from "../../../Utils/UrlImage";
 
 
+// the contact list 
+export let ListContact = {
+    title: `
+    Fyll i dina uppgifter nedan sà hör vi av oss och bokar ett möte`,
+    des: `Vi är övertygade om att alla bra samarbeten börjar med ett möte. Orkar du inte vänta kan du alltid ringa oss pà`,
+    telephone: '07327463',
+    image: UrlImage.TheContact
+}
+// services...
+export let FirstPage = {
+    title: 'Hemsida som håller dina kunder inlåsta',
+    firstTitle: 'Våra tjänster',
+    image: UrlImage.thepaper,
+    des: `med oss härligaste webbyrå. Vi har sedan starten 2022, hjälpt företag med deras online närvaro och profil. Vi erbjuder tjänster som webbutveckling, grafisk design, SEO, och mycket mer.`
 
+}
 
 // home slider 
 export let data = {
@@ -147,6 +162,12 @@ export let AppMobile = {
 }
 
 
+
+export let TheseoTitle = {
+    title : 'Mät KPI för SEO och se hur din webbplats presterar',
+    image: UrlImage.SEO,
+}
+
 // SEO 
 export let TheSEOdATA = {
     title: 'Sökmotoroptimering med mätbara resultat',
@@ -155,7 +176,11 @@ export let TheSEOdATA = {
 
 }
 
-
+export let DesignTitle = {
+    title: 'Professionell webbdesign - Skapa en minnesvärd kundupplevelse',
+    image: UrlImage.thepaper,
+    des: 'Vi arbetar dag som natt för att garantera snabba leveranser oavsett var i världen man befinner sig.'
+}
 // desgin 
 export let TheDesign = [
     {
@@ -180,8 +205,15 @@ Med vår utveckling av e-handel skapar vi en ren och intuitiv UI/UX-design, snab
     }
 ]
 
-// email 
 
+// email seo 
+export let EmailTile = {
+    title: 'Vad är e-postmarknadsföring?',
+    h1title: 'Kommunicera bättre genom personaliserad e-postmarknadsföring',
+    des: 'Kommunicera bättre genom personaliserad e-postmarknadsföring och e-postutskick',
+    image: UrlImage.emailmarketing,
+}
+// email 
 export let TheEmailMarketing = [
 
     {
@@ -252,7 +284,7 @@ export let InfoContact = {
 
 // who is us
 export let WhoIsUs = {
-    us : 'om oss',
+    us: 'om oss',
     title: 'Skapa framgång tillsammans med Med Oss',
     des: ` Vi jobbar alltid nära kunden. Standardlösningar är inget för oss, utan alla våra samarbeten bygger på ömsesidig förståelse och individuella anpassningar. Vi har ett agilt arbetssätt, och baserat på era problemställningar ser vi till att skapa den bästa lösningen för er – bit för bit, steg för steg.`,
     choose: 'Varför välja oss!',

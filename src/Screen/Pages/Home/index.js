@@ -1,55 +1,63 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import OmOss from '../OmOss'
-import { FirstScreen } from './FristScreen'
+const FirstScreen = React.lazy(() => import('./FristScreen'))
 import { OssScreen } from '../OssScreen'
 import { SliderProjects } from '../SliderProjects'
-
+import MetaDecorator from '../../Components/Header'
+import Contact from '../Contact'
+import TheLoading from '../../Components/Login'
+import { data } from '../../Components/data/index'
 
 
 const HomeScreen = () => {
 
 
-    // first page 
-    // services --- > OmOss
-    // contact OmOss
 
 
     return (
 
-        <div className='padding' >
+        <Fragment>
+
+            <MetaDecorator
+                title='Med Oss'
+                description={data?.title}
+                imageUrl={data?.image}
+                imageAlt={data?.title}
+
+            />
+
+            <div className='padding' >
 
 
 
-
-            <FirstScreen />
-
-            <div className='margin-bottomDev ' />
-            <div className='margin-bottomDev LineX antherbackground' />
+                <React.Suspense fallback={<TheLoading />}>
+                    <FirstScreen />
+                </React.Suspense>
 
 
-            <OmOss />
-
-            <div className='margin-bottomDev ' />
-            <div className='margin-bottomDev LineX antherbackground' />
-            <OssScreen />
-            <div className='margin-bottomDev ' />
-            <div className='margin-bottomDev LineX antherbackground' />
-
-            <SliderProjects />
-
-            <div className='margin-bottomDev ' />
-            <div className='margin-bottomDev LineX antherbackground' />
-
-            {/* 
-
-        
+                <div className='margin-bottomDev ' />
+                <div className='margin-bottomDev LineX antherbackground' />
 
 
-            <Contact /> */}
+                <OmOss />
+
+                <div className='margin-bottomDev ' />
+                <div className='margin-bottomDev LineX antherbackground' />
+                <OssScreen />
+                <div className='margin-bottomDev ' />
+                <div className='margin-bottomDev LineX antherbackground' />
+
+                <SliderProjects />
+
+                <div className='margin-bottomDev ' />
+                <div className='margin-bottomDev LineX antherbackground' />
+
+                <Contact />
 
 
+            </div>
 
-        </div>
+        </Fragment>
 
 
 

@@ -1,10 +1,13 @@
 
-import React from 'react'
+import React, { Fragment } from 'react'
 import TheImage from '../../Components/TheImage'
 import Contact from '../Contact'
-import {TheEmailMarketing} from '../../Components/data/index'
+import { TheEmailMarketing, EmailTile } from '../../Components/data/index'
+import MyImage from '../../Components/ImageLazy/index'
+import MetaDecorator from '../../Components/Header'
+import { TheSlice } from '../../../Utils/Helps'
 
-export const EmailMarketing = () => {
+const EmailMarketing = () => {
 
 
 
@@ -13,40 +16,63 @@ export const EmailMarketing = () => {
 
 
     return (
-        <div className='padding'>
+        <Fragment>
 
-            {
-                TheEmailMarketing.map((item,index)=>(
-                    <div className='flex flexrow space-between align-items flexwrap' key={index}>
+            <MetaDecorator
+                title={`Med Oss -${EmailTile.title}`}
+                description={EmailTile.des}
+                imageUrl={EmailTile.image}
+                imageAlt={EmailTile.title}
 
-                    <div className='firstwidth dev-size padding '>
-                        <h1 className='Title font-family screenColor FirstLetter'>{item.title}</h1>
-                        <div className='margin-topandbottom '>
-                            <span className='des font-family colordes'>
-                                {item.des}
-                            </span>
-    
-                        </div>
-                    </div>
-    
-    
-                    <div className={index === 1 ? '_idOrder firstwidth dev-size padding flex align-items center order overflow' :'firstwidth dev-size padding flex align-items center order overflow'}>
-                        <TheImage
-                            Url={item.image}
-                            className='Image objectcover Imageanimation'
-                        />
-                    </div>
+            />
 
-                    <div className='margin-top-two LineX antherbackground' />
+
+
+            <div className='padding'>
+                <div className='flex  center align-items flexwrap  margin-topandbottom h1align'>
+                    <h1 className='Title font-family screenColor FirstLetter' >{EmailTile.h1title}</h1>
+
                 </div>
-                ))
-            }
-   
-         
 
-            <Contact />
+                {
+                    TheEmailMarketing.map((item, index) => (
+                        <div className='flex flexrow space-between align-items flexwrap' key={index}>
+
+                            <div className='firstwidth dev-size padding '>
+                                <h2 className='Title font-family screenColor FirstLetter'>{item.title}</h2>
+                                <div className='margin-topandbottom '>
+                                    <span className='des font-family-des colordes'>
+                                        {item.des}
+                                    </span>
+
+                                </div>
+                            </div>
 
 
-        </div>
+                            <div className={index === 1 ? '_idOrder firstwidth dev-size padding flex align-items center order overflow' : 'firstwidth dev-size padding flex align-items center order overflow'}>
+                                <MyImage
+                                    image={item.image}
+                                    className='Image objectcover Imageanimation'
+                                    alt={item.title}
+                                />
+                            </div>
+
+                            <div className='margin-top-two LineX antherbackground' />
+                        </div>
+                    ))
+                }
+
+
+
+                <Contact />
+
+
+            </div>
+
+        </Fragment>
+
     )
 }
+
+
+export default EmailMarketing
