@@ -9,7 +9,7 @@ import MyImage from '../../Components/ImageLazy'
 
 const FirstScreen = () => {
 
-
+    
     return (
         <div className='flex flexrow space-between align-items flexwrap '>
 

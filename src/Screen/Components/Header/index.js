@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 
 
 let metaDecorator = {
-  hostname: "http://localhost:4000",
+  hostname: "https://medoss.se",
   twitterUsername : "@MedOss"
 }
 
@@ -28,7 +28,7 @@ const MetaDecorator = ({ title, description, imageUrl, imageAlt }) => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image:alt" content={imageAlt} />
       <meta name="twitter:site" content={metaDecorator.twitterUsername} />
-      <meta property='og:type' content='http://localhost:4000/' />
+      <meta property='og:type' content='https://medoss.se' />
       <link rel="canonical" href={metaDecorator.hostname + condation } />
     </Helmet>
   )

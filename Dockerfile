@@ -1,4 +1,4 @@
-FROM  node:alpine
+FROM  --platform=linux/amd64 node:alpine
 # Create src directory 
 WORKDIR /app
 COPY package.json .

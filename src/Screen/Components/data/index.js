@@ -1,5 +1,35 @@
 import { UrlImage } from "../../../Utils/UrlImage";
 
+// selection 
+export let TheSelection = [
+    {
+        _id: 0,
+        name: 'Hur kan vi hjälpa dig ?'
+    },
+    {
+        _id: 1,
+        name: 'Sökmotoroptimering (SEO)'
+    },
+    {
+        _id: 2,
+        name: 'Webbdesign'
+    },
+    {
+        _id: 3,
+        name: 'E-handel'
+    },
+    {
+        _id: 4,
+        name: 'Social Media Marketing'
+    },
+    {
+        _id: 5,
+        name: ' Webb & Mobil app'
+    }, {
+        _id: 6,
+        name: 'Annat'
+    },
+]
 
 // the contact list 
 export let ListContact = {

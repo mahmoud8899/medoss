@@ -61,12 +61,11 @@ const NavBar = () => {
                     <div className='firstwidth Ul-Size'>
                         <ul className='flex flexrow space-between align-items text-transform cursor'>
                             {ListNavBar?.map((item, index) => (
-                                <Link key={index} to={item.link} className='Link whitecolor' >
-
-                                    <li className='Name font-family-name' >
+                                <li className='Name font-family-name'key={index} >
+                                    <Link  to={item.link} className='Link whitecolor' >
                                         {item.name}
-                                    </li>
-                                </Link>
+                                    </Link>
+                                </li>
                             ))}
 
 

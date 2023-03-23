@@ -28,6 +28,8 @@ const HomeScreen = () => {
 
             <div className='padding' >
 
+        
+
 
 
                 <React.Suspense fallback={<TheLoading />}>
@@ -44,12 +46,12 @@ const HomeScreen = () => {
                 <div className='margin-bottomDev ' />
                 <div className='margin-bottomDev LineX antherbackground' />
                 <OssScreen />
-                <div className='margin-bottomDev ' />
+ 
                 <div className='margin-bottomDev LineX antherbackground' />
 
                 <SliderProjects />
 
-                <div className='margin-bottomDev ' />
+
                 <div className='margin-bottomDev LineX antherbackground' />
 
                 <Contact />

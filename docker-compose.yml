@@ -8,5 +8,6 @@ services:
     ports:
     - "4000:4000"
     environment:
+    - DOCKER_DEFAULT_PLATFORM=linux/amd64
     - PORT=4000
 

@@ -7,7 +7,7 @@ import Render from './Render';
 import { matchRoutes } from 'react-router-dom';
 import { routersArray } from '../RoutesData'
 
-
+import TheSmtp from './Mail/smtp'
 
 
 
@@ -28,12 +28,13 @@ app.use([
 
 
 
+
 app.use('/*', (req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*")
   res.setHeader('Last-Modified', (new Date()).toUTCString());
   next();
 })
-
+app.use('/', TheSmtp)
 
 app.use(express.static("build"));
 
@@ -83,7 +84,6 @@ app.get('/*', async (req, res) => {
     });
 
 });
-
 
 
 

@@ -17,7 +17,15 @@ import thepaper from './image/paper.png'
 import ExtraUi from './image/ui2.png'
 import emailmarketing from './image/email-marketing.png'
 import emailmarketingOne from './image/email-marketing1.png'
-
+import theimage1 from './ui/1.jpg'
+import theimage2 from './ui/2.jpg'
+import theimage3 from './ui/3.png'
+import theimage4 from './ui/4.png'
+import theimage5 from './ui/5.png'
+import theimage6 from './ui/6.png'
+import theimage7 from './ui/7.jpg'
+import theimage8 from './ui/8.jpg'
+import theimage9 from './ui/9.jpg'
 
 export const UrlImage = {
     Home : Home,
@@ -39,6 +47,15 @@ export const UrlImage = {
     ExtraUi : ExtraUi,
     emailmarketing : emailmarketing,
     emailmarketingOne: emailmarketingOne,
+    theimage1 :theimage1,
+theimage2 : theimage2,
+theimage3 :theimage3,
+theimage4:theimage4,
+theimage5:theimage5,
+theimage6 :theimage6,
+theimage7 :theimage7,
+theimage8 :theimage8,
+theimage9 :theimage9
    
 
 
