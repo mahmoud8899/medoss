@@ -9,6 +9,7 @@ const EmailMarketing = React.lazy(() => import('./Screen/Pages/Email'))
 const ContactScreen = React.lazy(() => import('./Screen/Pages/Contact/ContactScreen'))
 const ServicesScreen = React.lazy(() => import('./Screen/Pages/OmOss/ServicesScreen'))
 import TheLoading from "./Screen/Components/Login";
+import EmptyScreen from "./Screen/Pages/EmptyScreen";
 
 
 
@@ -27,7 +28,7 @@ export const routersArray = [
                 </div>}>
                     <HomeLozy />
                 </React.Suspense>,
-                path: '/',
+                path: '/ar?/',
             },
             {
                 element: <React.Suspense fallback={<div className="devloading">
@@ -98,13 +99,24 @@ export const routersArray = [
                 element: <React.Suspense fallback={<div className="devloading">
                     <TheLoading />
                 </div>}>
-                    <div>
-                        error
-                    </div>
+                   <EmptyScreen   />
                 </React.Suspense>,
                 path: '*',
 
+            },
+            {
+                element: <React.Suspense fallback={<div className="devloading">
+                    <TheLoading />
+                </div>}>
+                   <EmptyScreen   />
+                </React.Suspense>,
+                path: '/client/bundle?.js',
+
             }
+
+
+
+         
         ]
     }
 ]

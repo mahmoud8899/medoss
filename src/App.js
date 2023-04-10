@@ -9,17 +9,22 @@ import TheLoading from './Screen/Components/Login'
 
 const App = ({ route }) => {
 
+
+
     return (
         <Fragment>
+
+
             <React.Suspense fallback={<TheLoading />}>
                 <NavBar />
             </React.Suspense>
 
+
             <Outlet />
+
             <React.Suspense fallback={<TheLoading />}>
                 <Footer />
             </React.Suspense>
-
 
 
         </Fragment>

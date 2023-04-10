@@ -14,8 +14,8 @@ const TheSEO = () => {
             <MetaDecorator
                 title={`Med Oss -${TheSEOdATA.title}`}
                 description={TheSlice(TheSEOdATA.des,Number(165))}
-                imageUrl={TheSEOdATA.image}
-                imageAlt={TheSEOdATA.title}
+                imageUrl={TheSEOdATA?.image}
+                imageAlt={TheSEOdATA?.title}
 
             />
 

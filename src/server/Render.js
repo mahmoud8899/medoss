@@ -24,7 +24,7 @@ export default function Render(req) {
   const helmet = Helmet.renderStatic()
 
   const html = `<!DOCTYPE html>
-        <html lang='sv'>
+        <html lang="sv-SE">
 
         <head>
         <title>Med Oss</title>      
@@ -36,7 +36,7 @@ export default function Render(req) {
 
         <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@500&display=swap" rel="stylesheet">
-    
+        <meta name="google-site-verification" content="MefkQMxS9LeayJ8MPstMgO85x8jW5Y6deeqVmA4DGGs" />
         ${helmet.title.toString()}
         ${helmet.meta.toString()}
         ${helmet.link.toString()}

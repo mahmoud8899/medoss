@@ -5,6 +5,9 @@
     transform-style: preserve-3d;
     perspective: 500px;
 }
+.whatapp{
+    width: 100%;
+}
 
 .alrt {
     background: #FF0099;
@@ -68,7 +71,7 @@
     transform: scale3d(1.5, 2, 1.5);
 }
 .Imageanimation {
-    /* animation: Mahmoud 10s infinite; */
+    animation: Mahmoud 10s infinite;
 }
 
 
@@ -94,6 +97,10 @@
 
 .text-align {
     text-align: center
+}
+
+.text-align_right {
+    text-align: right;
 }
 
 .widthThre {
@@ -174,7 +181,10 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
-
+.marginEmpty {
+    margin-top: 10rem;
+    margin-bottom: 10rem
+}
 .margin-screen {
     margin-top: 5rem;
 }
@@ -283,9 +293,18 @@ input {
 ._icons {
     font-size: 30px;
 }
+._icons2{
+    font-size: 40px;
+}
 
 .screenColor {
     color: #943c7e;
+}
+.feaccolor {
+   color: #0a7eec;
+}
+.wahtappcolor {
+    color: #1cd741;
 }
 
 .widthbar {

@@ -7,9 +7,14 @@ import { Link } from 'react-router-dom'
 import { TheServices } from '../../Components/data/index'
 import { TheSlice } from '../../../Utils/Helps'
 import MyImage from '../../Components/ImageLazy'
+import { useLocation } from 'react-router-dom'
+
 
 const OmOss = () => {
 
+
+    let Match = useLocation()?.pathname
+    let condation = Match?.toString() === '/ar' || Match?.toString() === '/ar/' ? true : false
 
     // options 
     // 1 Webbdesign 2- Webbutveckling 3-App Utveckling 4- SEO 5- ui and ux 6- email
@@ -22,30 +27,30 @@ const OmOss = () => {
 
                 {TheServices.map((item, index) => (
                     <Link
-                        to={item.link}
+                        to={condation ? item.link.AR : item?.link?.EN}
                         key={index}
                         className='Link flex flexcolumn align-items flexwrap  widthHalf padding  margin-text box-shadow border-raduisLeft'
                     >
                         <MyImage
                             image={item.image}
                             className='_iMage_box'
-                            alt={item.title}
+                            alt={condation ? item?.title?.AR : item?.title?.EN}
                         />
 
                         <div className=''>
-                            <h2 className='Title font-family screenColor'>{item.title}</h2>
+                            <h2 className='Title font-family screenColor'>{condation ? item.title.AR : item.title?.EN}</h2>
                         </div>
 
-                        <div className='margin-text'>
+                        <div className={condation ? 'text-align_right margin-text' : 'margin-text'} >
                             <span className='des font-family-des colordes'>
-                                {TheSlice(item.des)}
+                                {TheSlice(condation ? item?.des.AR : item?.des?.EN)}
                             </span>
 
 
 
                             <div className=''>
                                 <TheButtom
-                                    Title={item.buttom}
+                                    Title={condation ? item.buttom.AR : item?.buttom?.EN}
                                     ClassBox='padding flex align-items margin-top-two  margin-bottomDev border-radius space-between cursor'
                                     TitleCss='Name font-family-name screenColor'
                                     IconCss='_icons screenColor ExtraHove'

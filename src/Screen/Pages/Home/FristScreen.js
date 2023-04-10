@@ -3,11 +3,18 @@ import { data } from '../../Components/data/index'
 import { BiRightArrowAlt } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import MyImage from '../../Components/ImageLazy'
+import {useLocation} from 'react-router-dom'
 
 
 
 
 const FirstScreen = () => {
+
+
+    let Match = useLocation()?.pathname
+   let  condation =  Match?.toString() === '/ar' || Match?.toString() === '/ar/' ? true : false
+
+
 
     
     return (
@@ -15,11 +22,11 @@ const FirstScreen = () => {
 
 
             <div className='firstwidth dev-size padding '>
-                <h1 className='Title font-family screenColor'>{data.title ? data.title : 'loading'}</h1>
+                <h1 className='Title font-family screenColor'>{condation ?  data.title.AR : data.title.EN }</h1>
 
-                <div className='margin-topandbottom '>
+                <div className={ condation ?'text-align_right margin-topandbottom ' : 'margin-topandbottom '} >
                     <span className='des font-family-des colordes'>
-                        {data.des ? data.des : 'loading'}
+                        {condation ? data.des.AR : data.des.EN}
                     </span>
 
                 </div>
@@ -29,12 +36,12 @@ const FirstScreen = () => {
 
 
                     <Link to='/services' className='Link WidthButtom antherbackground flex flexrow space-between align-items padding border-radius'>
-                        <span className='white Name font-family-name'>{data.Services ? data.Services : 'loading'}</span>
+                        <span className='white Name font-family-name'>{condation ? data.Services.AR : data.Services.EN }</span>
                         <BiRightArrowAlt className='white _icons' />
                     </Link>
 
                     <Link to='/contact' className='Link WidthButtom screenback flex flexrow space-between align-items padding border-radius'>
-                        <span className='white Name font-family-name'>{data.meet ? data.meet : 'loading'}</span>
+                        <span className='white Name font-family-name'>{condation ? data.meet.AR : data.meet.EN }</span>
                         <BiRightArrowAlt className='white _icons' />
                     </Link>
                    
@@ -48,7 +55,7 @@ const FirstScreen = () => {
                     image={data.image}
                     className='Image objectcover Imageanimation'
                     beforeLoad={<div>loading.....</div>}
-                    alt={data.title}
+                    alt={condation ? data.title.AR : data.title.EN}
                 />
 
 

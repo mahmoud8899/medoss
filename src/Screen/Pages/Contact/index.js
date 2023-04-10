@@ -8,10 +8,15 @@ import { TheSelection } from '../../Components/data/index'
 import { ValtionMe } from '../../Components/Validation/index'
 import { IoClose, } from 'react-icons/io5'
 import { InilionState, MessageClose, sendData } from './response'
+import { useLocation } from 'react-router-dom'
+
+
+
 const Contact = () => {
 
 
-
+    let Match = useLocation()?.pathname
+    let condation = Match?.toString() === '/ar' || Match?.toString() === '/ar/' ? true : false
 
 
     const [data, setData] = useState(InilionState)
@@ -65,10 +70,10 @@ const Contact = () => {
 
         <div className='firstwidth dev-size padding'>
 
-            <h2 className='Title font-family screenColor h1align'>{ListContact.title}</h2>
-            <div className='margin-topandbottomOne h1align'>
+            <h2 className='Title font-family screenColor h1align'> {condation ? ListContact.title.AR : ListContact.title.EN}</h2>
+            <div className={condation ? 'text-align_right margin-topandbottomOne h1align':'margin-topandbottomOne h1align'}>
                 <span className='des font-family-des colordes'>
-                    {ListContact.des} {ListContact.telephone}
+                    {condation ? ListContact.des.AR : ListContact.des.EN} {ListContact.telephone}
                 </span>
 
             </div>

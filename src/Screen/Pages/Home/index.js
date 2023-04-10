@@ -14,17 +14,23 @@ const HomeScreen = () => {
 
 
 
+
+    
+
+
     return (
 
         <Fragment>
 
             <MetaDecorator
-                title='Med Oss'
+                title='Med Oss - Professionell Webbyrå i sundsvall'
                 description={data?.title}
                 imageUrl={data?.image}
                 imageAlt={data?.title}
 
             />
+
+
 
             <div className='padding' >
 

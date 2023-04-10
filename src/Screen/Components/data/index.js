@@ -33,29 +33,48 @@ export let TheSelection = [
 
 // the contact list 
 export let ListContact = {
-    title: `
-    Fyll i dina uppgifter nedan sà hör vi av oss och bokar ett möte`,
-    des: `Vi är övertygade om att alla bra samarbeten börjar med ett möte. Orkar du inte vänta kan du alltid ringa oss pà`,
+    title: {EN :   `Fyll i dina uppgifter nedan sà hör vi av oss och bokar ett möte`,AR : 'املأ التفاصيل الخاصة بك أدناه حتى نتمكن من الاتصال وحجز اجتماع'},
+    des: {EN :`Vi är övertygade om att alla bra samarbeten börjar med ett möte. Orkar du inte vänta kan du alltid ringa oss pà`,AR: 'نحن مقتنعون بأن كل أشكال التعاون الجيد تبدأ بالاجتماع. إذا كنت لا تطيق الانتظار ، يمكنك دائمًا الاتصال بنا على'},
     telephone: '07327463',
     image: UrlImage.TheContact
 }
+
 // services...
 export let FirstPage = {
     title: 'Hemsida som håller dina kunder inlåsta',
-    firstTitle: 'Våra tjänster',
+    firstTitle: { EN :'Våra tjänster',  AR : 'خدماتنا'},
     image: UrlImage.thepaper,
-    des: `med oss härligaste webbyrå. Vi har sedan starten 2022, hjälpt företag med deras online närvaro och profil. Vi erbjuder tjänster som webbutveckling, grafisk design, SEO, och mycket mer.`
+    des: {
+        EN : `med oss härligaste webbyrå. Vi har sedan starten 2022, hjälpt företag med deras online närvaro och profil. Vi erbjuder tjänster som webbutveckling, grafisk design, SEO, och mycket mer.`,
+        AR : 'معنا أجمل وكالة ويب. منذ البداية في عام 2022 ، ساعدنا الشركات في تواجدها على الإنترنت وملفها الشخصي. نحن نقدم خدمات مثل تطوير الويب والتصميم الجرافيكي وتحسين محركات البحث وغير ذلك الكثير'
+    }
 
 }
 
 // home slider 
 export let data = {
 
-    title: 'Webbyrå som tänjer digitala gränser med javascript.',
+    title: {
+        EN: 'Webbyrå som tänjer digitala gränser med javascript.',
+        AR: 'وكالة الويب التي تدفع الحدود الرقمية باستخدام جافا سكريبت'
+    },
+
+
     image: UrlImage.ExtraUi,
-    meet: 'Boka möte',
-    Services: 'Las mer om vara tiänster',
-    des: `Med Oss är en app- och webbyrå som hjälper dig designa och utveckla din webbplats, app eller ditt spel. Vi är en heltäckande digital byrå med mycket bred kompetens. Genom kundnära samarbete, agila arbetssätt och fokus på lönsamhet tar vi ditt projekt från idé till färdig produkt.`
+    meet: {
+        EN: 'Boka möte',
+        AR: "حجز اجتماع"
+
+    },
+    Services: {
+        EN: 'Läs mer om vara tjänster',
+        AR: 'اقرأ المزيد عن خدماتنا'
+    },
+    des: {
+        EN: `Med Oss är en app- och webbyrå som hjälper dig designa och utveckla din webbplats, app eller ditt spel. Vi är en heltäckande digital byrå med mycket bred kompetens. Genom kundnära samarbete, agila arbetssätt och fokus på lönsamhet tar vi ditt projekt från idé till färdig produkt.`,
+        AR: 'هي وكالة تطبيقات وويب تساعدك على تصميم وتطوير موقعك على الويب أو تطبيقك أو لعبتك. نحن وكالة رقمية شاملة بكفاءات واسعة للغاية. من خلال التعاون الوثيق مع العملاء وأساليب العمل الرشيقة والتركيز على الربحية ، نأخذ مشروعك من الفكرة إلى المنتج النهائي'
+    },
+
 }
 
 
@@ -64,57 +83,108 @@ export let data = {
 export let TheServices = [
     {
         _id: 1,
-        title: 'Webbdesign',
+        title: {
+            EN: 'Webbdesign',
+            AR: 'تصميم المواقع',
+        },
         image: UrlImage.ExtraUi,
-        buttom: 'läs mer om Webbdesign',
-        link: '/web',
-        des: 'Vi designar funktionella gränssnitt för en estetiskt tilltalande digital närvaro som hjälper till att berätta en historia och öka ditt varumärkesprestanda',
+        buttom: {
+            EN: 'läs mer om Webbdesign',
+            AR: 'اقرأ المزيد عن تصميم الويب'
+        },
+        link: {
+            EN: '/web/',
+            AR: '/web/ar/'
+        },
+        des: {
+            EN: 'Vi designar funktionella gränssnitt för en estetiskt tilltalande digital närvaro som hjälper till att berätta en historia och öka ditt varumärkesprestanda',
+            AR: 'نحن نصمم واجهات وظيفية من أجل حضور رقمي ممتع من الناحية الجمالية يساعد على سرد قصة وزيادة أداء علامتك التجارية',
+        }
 
     },
     {
         _id: 2,
-        title: 'Webbutveckling',
+        title: {
+            EN: 'Webbutveckling',
+            AR: 'تطوير المواقع',
+        },
         image: UrlImage.Webbutveckling,
-        buttom: 'läs mer om Webbutveckling',
-        link: '/web',
-        des: 'Vi tillhandahåller webbplatsutvecklingstjänster som ligger i framkant av dagens teknik',
+        buttom: {
+            EN: 'läs mer om Webbutveckling',
+            AR: 'اقرأ المزيد عن تطوير الويب'
+        },
+
+        link: {
+            EN: '/web/',
+            AR: '/web/ar/'
+        },
+        des: {
+            EN: 'Vi tillhandahåller webbplatsutveckling tjänster som ligger i framkant av dagens teknik',
+            AR: 'نحن نقدم خدمات تطوير المواقع التي هي في طليعة تكنولوجيا اليوم'
+
+        }
 
     },
     {
         _id: 3,
-        title: 'App Utveckling',
+        title: {
+            EN: 'App Utveckling',
+            AR: 'تطوير التطبيقات'
+        },
         image: UrlImage.App,
-        buttom: 'läs mer om App Utveckling',
-        link: '/mobilapp',
-        des: 'Skräddarsydda programvara som underlättar era unika affärsproblem',
+        buttom: { EN: 'läs mer om App Utveckling', AR: 'اقرأ المزيد عن تطوير التطبيقات' },
+        link: {
+            EN: '/mobilapp/',
+            AR: '/mobilapp/ar/',
+        },
+        des: { EN: 'Skräddarsydda programvara som underlättar era unika affärsproblem', AR: 'برنامج مصمم خصيصًا يسهل مشاكل عملك الفريدة' }
 
     },
     {
         _id: 4,
-        title: 'Sökmotoroptimering',
+        title: { EN: 'Sökmotoroptimering', AR: 'تحسين محرك البحث' },
         image: UrlImage.SEO,
-        link: '/seo',
-        buttom: 'läs mer om App Sökmotoroptimering',
-        des: 'Med oss erbjuder en SEO-tjänst som driver försäljning, inte bara trafik. Ranka & synas på första sidan i sökresultaten',
+        link: { EN: '/seo/', AR: '/seo/ar/' },
+        buttom: { EN: 'läs mer om App Sökmotoroptimering', AR: 'اقرأ المزيد عن تحسين محرك بحث التطبيقات' },
+        des:
+        {
+            EN: 'Med oss erbjuder en SEO-tjänst som driver försäljning, inte bara trafik. Ranka & synas på första sidan i sökresultaten',
+            AR : `
+            نحن نقدم خدمة تحسين محركات البحث  التي تزيد المبيعات ، وليس مجرد حركة المرور. الترتيب والظهور في الصفحة الأولى من نتائج البحث
+
+            `
+        },
 
     },
 
     {
         _id: 5,
-        title: 'E-Handel',
+        title: { EN: 'E-Handel', AR: 'تصميم مواقع التجارة الإلكترونية' },
         image: UrlImage.UI,
-        link: '/design',
-        buttom: 'läs mer om App E-Handel',
-        des: 'Vi skapar en intuitiv UI/UX-design, snabba laddnings hastigheter och mobil kompatibilitet butik som förbättrar konverteringar',
+        link: {
+            EN: '/design/ar',
+            AR: '/design/ar',
+        },
+        buttom: { EN: 'läs mer om App E-Handel', AR: 'اقرأ المزيد عن التجارة الإلكترونية' },
+        des: {
+            EN: 'Vi skapar en intuitiv UI/UX-design, snabba laddnings hastigheter och mobil kompatibilitet butik som förbättrar konverteringar',
+            AR: 'نصنع تصميمًا بديهيًا لواجهة المستخدم  ، وسرعات تحميل سريعة ومتجرًا متوافقًا مع الأجهزة المحمولة يعمل على تحسين التحويلات'
+        }
 
     },
     {
         _id: 6,
-        title: 'E-postmarknadsföring',
+        title: { EN: 'E-postmarknadsföring', AR: 'التسويق عبر البريد الإلكتروني' },
         image: UrlImage.Email,
-        link: '/e-postmarknadsforing',
-        buttom: 'läs mer om App E-postmarknadsföring',
-        des: 'Med e-post marknadsföringsstrategi leder vi ditt företag till framgång och ökar försäljningens omvandling och avkastningen',
+        link: {
+            EN: '/e-postmarknadsforing/',
+            AR: '/e-postmarknadsforing/ar/',
+        },
+        buttom: { EN: 'läs mer om App E-postmarknadsföring', AR: 'اقرأ المزيد عن التسويق عبر البريد الإلكتروني للتطبيق' },
+        des: {
+            EN: 'Med e-post marknadsföringsstrategi leder vi ditt företag till framgång och ökar försäljningens omvandling och avkastningen',
+            AR: 'من خلال استراتيجية التسويق عبر البريد الإلكتروني ، نقود عملك إلى النجاح ونزيد من تحويل المبيعات وعائد الاستثمار'
+        }
     }
 
 ]
@@ -194,7 +264,7 @@ export let AppMobile = {
 
 
 export let TheseoTitle = {
-    title : 'Mät KPI för SEO och se hur din webbplats presterar',
+    title: 'Mät KPI för SEO och se hur din webbplats presterar',
     image: UrlImage.SEO,
 }
 
@@ -268,34 +338,49 @@ export let ListNavBar = [
 
     {
         _id: 0,
-        name: 'start',
-        link: '/'
+        name: {EN :'start', AR: 'med oss'},
+        link: {EN:'/', AR : '/ar/'}
     },
 
     {
         _id: 1,
-        name: 'tjänster',
-        link: '/services'
+        name:  {EN :'tjänster', AR: 'خدمات'},
+        link: {
+            EN : '/services/',
+            AR: '/services/ar/'
+        }
     },
     {
         _id: 2,
-        name: 'E-Handel',
-        link: '/design'
+        name: {EN:'E-Handel',AR : 'تطوير المواقع'},
+        link: {
+            EN : '/design/',
+            AR : '/design/ar/'
+        }
     },
     {
         _id: 3,
-        name: 'App Utveckling',
-        link: '/mobilapp'
+        name: {EN:'App Utveckling',AR : 'تطوير التطبيقات'},
+        link: {
+            EN : '/mobilapp/',
+            AR: '/mobilapp/ar/'
+        }
     },
     {
         _id: 4,
-        name: 'Kontakt',
-        link: '/contact'
+        name: {EN:'Kontakt', AR : 'اتصال'},
+        link: {
+            EN : '/contact/',
+            AR : '/contact/ar/'
+        }
     },
     {
         _id: 5,
-        name: 'E-postmarknadsföring',
-        link: '/e-postmarknadsforing'
+        name: {EN :'E-postmarknadsföring',AR :'التسويق عبر البريد الإلكتروني'},
+        link: {
+            EN : '/e-postmarknadsforing/',
+            AR : '/e-postmarknadsforing/ar/'
+        }
     },
 
 ]
@@ -314,10 +399,19 @@ export let InfoContact = {
 
 // who is us
 export let WhoIsUs = {
-    us: 'om oss',
-    title: 'Skapa framgång tillsammans med Med Oss',
-    des: ` Vi jobbar alltid nära kunden. Standardlösningar är inget för oss, utan alla våra samarbeten bygger på ömsesidig förståelse och individuella anpassningar. Vi har ett agilt arbetssätt, och baserat på era problemställningar ser vi till att skapa den bästa lösningen för er – bit för bit, steg för steg.`,
-    choose: 'Varför välja oss!',
-    des2: `Oavsett om ni är ett småföretag som startar med bara en idé eller ett företag som vill utveckla sin digitala närvaro, Med Oss erbjuder strategisk insikt och decennier av erfarenhet av affärs uppväxt i den digitala världen vilket resulterar i kompletta och helheltslösningar som levereras perfekt och på rekordtid.`
+    us: { EN:'om oss', AR : 'معلومات عنا' },
+    title: {EN :'Skapa framgång tillsammans med Med Oss', AR : 'اصنع النجاح معنا' },
+    des: 
+    {
+        EN :`Vi jobbar alltid nära kunden. Standardlösningar är inget för oss, utan alla våra samarbeten bygger på ömsesidig förståelse och individuella anpassningar. Vi har ett agilt arbetssätt, och baserat på era problemställningar ser vi till att skapa den bästa lösningen för er – bit för bit, steg för steg.`,
+        AR: 'نحن نعمل دائمًا بالقرب من العميل. الحلول القياسية ليست مناسبة لنا ، ولكن كل تعاوننا قائم على التفاهم المتبادل والتكيفات الفردية. لدينا طريقة مرنة للعمل ، وبناءً على مشاكلك ، نتأكد من إنشاء أفضل حل لك - قطعة قطعة ، خطوة بخطوة.'
+},
+    choose: {EN :'Varför välja oss!', AR : 'لماذا أخترتنا' },
+    des2: {
+        EN : `Oavsett om ni är ett småföretag som startar med bara en idé eller ett företag som vill utveckla sin digitala närvaro, Med Oss erbjuder strategisk insikt och decennier av erfarenhet av affärs uppväxt i den digitala världen vilket resulterar i kompletta och helheltslösningar som levereras perfekt och på rekordtid.`,
+        AR : `
+        سواء كنت شركة صغيرة تبدأ بفكرة فقط أو شركة تتطلع إلى تطوير وجودها الرقمي ، تقدم  رؤية استراتيجية وعقودًا من الخبرة في تنمية الأعمال التجارية في العالم الرقمي مما أدى إلى حلول كاملة وشاملة يتم تسليمها بشكل مثالي وفي وقت قياسي .
+        `
+    }
 
 }

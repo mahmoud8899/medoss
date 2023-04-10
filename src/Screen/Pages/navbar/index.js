@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Logo } from './Logo'
 import { Link } from 'react-router-dom'
 import { ListNavBar, InfoContact } from '../../Components/data/index'
+import { useLocation } from 'react-router-dom'
 
 
 
@@ -27,7 +28,8 @@ const NavBar = () => {
             })
         }
     }
-
+    let Match = useLocation()?.pathname
+    let condation = Match?.toString() === '/ar' || Match?.toString() === '/ar/' ? true : false
 
     return (
         <div className='background padding'>
@@ -62,8 +64,8 @@ const NavBar = () => {
                         <ul className='flex flexrow space-between align-items text-transform cursor'>
                             {ListNavBar?.map((item, index) => (
                                 <li className='Name font-family-name'key={index} >
-                                    <Link  to={item.link} className='Link whitecolor' >
-                                        {item.name}
+                                    <Link  to={condation ? item.link.AR : item.link.EN} className='Link whitecolor' >
+                                        {condation ? item.name.AR : item.name.EN}
                                     </Link>
                                 </li>
                             ))}

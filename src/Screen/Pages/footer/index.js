@@ -1,12 +1,24 @@
 import React from 'react'
-import {Logo} from '../navbar/Logo'
+import { Logo } from '../navbar/Logo'
 import TheInput from '../../Components/TheInput';
 import TheButtom from '../../Components/buttom';
 import { Link } from 'react-router-dom'
 import { ListNavBar } from '../../Components/data/index'
-import {InfoContact } from '../../Components/data/index'
+import { InfoContact } from '../../Components/data/index'
+import { useLocation } from 'react-router-dom'
+
+
+import { FaFacebook, FaWhatsappSquare } from 'react-icons/fa'
 
 const Footer = () => {
+
+
+    let info = {
+        phone : '+46709208520'
+    }
+
+    let Match = useLocation()?.pathname
+    let condation = Match?.toString() === '/ar' || Match?.toString() === '/ar/' ? true : false
 
 
     return (
@@ -20,9 +32,9 @@ const Footer = () => {
 
                 <ul >
                     {ListNavBar?.map((item, index) => (
-                        <Link to={item.link} className='Link whitecolor' key={index}>
+                        <Link to={condation ? item.name.AR :item.link.EN} className='Link whitecolor' key={index}>
                             <li className='Name font-family-name margin-topandbottomOne'>
-                                 {item.name}
+                                {condation? item.name.AR : item.name.EN}
                             </li>
                         </Link>
                     ))}
@@ -30,11 +42,6 @@ const Footer = () => {
 
                 </ul>
             </div>
-
-
-
-
-
 
             <div className='widthThre ExtraWidth margin-text'>
                 <div className='flex flexcolumn'>
@@ -64,6 +71,21 @@ const Footer = () => {
 
 
 
+            </div>
+
+
+   
+            <div className='whatapp flex flexrow-reverse'>
+                <div className='placeholder' >
+                    <Link to={`https://wa.me/${info.phone}`} >
+                        <FaWhatsappSquare className='_icons2 wahtappcolor cursor' />
+                    </Link>
+                </div>
+                <div className='placeholder'>
+                    <Link to='https://www.facebook.com/profile.php?id=100090706691806' >
+                        <FaFacebook className='_icons2 feaccolor cursor' />
+                    </Link>
+                </div>
             </div>
 
 
