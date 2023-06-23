@@ -8,7 +8,7 @@ const TheAddrss = () => {
     let ContacTinfo = {
 
         email: 'info@medoss.se',
-        Phone: '0709208520',
+        Phone: '+46709208520',
         address: 'Trapetsvägen 20 A',
         city: '864 33 matfors'
     }

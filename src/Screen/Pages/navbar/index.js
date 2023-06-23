@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { Logo } from './Logo'
 import { Link } from 'react-router-dom'
-import { ListNavBar, InfoContact } from '../../Components/data/index'
-import { useLocation } from 'react-router-dom'
+import { ListNavBar, InfoContact, language } from '../../Components/data/index'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { MdLanguage } from 'react-icons/md'
 
 
 
@@ -29,14 +30,37 @@ const NavBar = () => {
         }
     }
     let Match = useLocation()?.pathname
-    let condation = Match?.toString() === '/ar' || Match?.toString() === '/ar/' ? true : false
+    let condation = Match.indexOf('/ar') === -1 ? false : true
+
+    let navigation = useNavigate()
+
+
+
+   
+
+     // change language ...
+    function ChangeLang(item) {
+
+        if (item === '/ar/' || item === '/ar') {
+
+            if (!condation) navigation(`${Match}ar/`)
+
+        } else {
+
+            let TheCondation = '/ar/' ? '/ar/' : '/ar'
+
+            navigation(Match?.replace(TheCondation, '/'))
+        }
+
+    }
+
 
     return (
         <div className='background padding'>
             <div className='flex flexrow-reverse '>
 
                 <span className='Name font-family-name opacity transition cursor'>
-                    {InfoContact.telephone}
+                    <a href={`tel:${InfoContact.telephone}`} className='Link whitecolor' >{InfoContact.telephone} </a>
                 </span>
                 <span className='Name font-family-name margin'>
                     |
@@ -47,11 +71,22 @@ const NavBar = () => {
                     </a>
                 </span>
 
+
             </div>
+
+            <div className='flex align-items  margin-topValdation'>
+                <MdLanguage className='_icons screenColor' />
+                {language?.map((item, index) => (
+                    <span onClick={() => ChangeLang(item.link)} className='onlymargin-left Name font-family-name opacity transition cursor' key={index}> / {item.name}  </span>
+                ))}
+            </div>
+
+
+
             <nav className='flex flexrow align-items  flexwrap'>
                 <div className='firstwidth dev-size flex flexrow align-items space-between'>
 
-                    <Logo />
+                    <Logo condation={condation} />
                     <div onClick={Change} className='widthbar flex  flexrow align-items' >
                         <div className={css.menubar}  >
                             <div className='menu-btn__burger' />
@@ -63,8 +98,8 @@ const NavBar = () => {
                     <div className='firstwidth Ul-Size'>
                         <ul className='flex flexrow space-between align-items text-transform cursor'>
                             {ListNavBar?.map((item, index) => (
-                                <li className='Name font-family-name'key={index} >
-                                    <Link  to={condation ? item.link.AR : item.link.EN} className='Link whitecolor' >
+                                <li className='Name font-family-name' key={index} >
+                                    <Link to={condation ? item.link.AR : item.link.EN} className='Link whitecolor' >
                                         {condation ? item.name.AR : item.name.EN}
                                     </Link>
                                 </li>

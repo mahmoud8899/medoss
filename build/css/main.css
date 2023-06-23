@@ -210,7 +210,12 @@
 ._idOrder {
     order: -1;
 }
+select option {
 
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  }
 .objectcover {
     object-fit:scale-down
 }
@@ -338,7 +343,7 @@ input {
     font-family: 'Noto Sans HK', sans-serif;
 }
 .Title {
-    font-size: 40px;
+    font-size: 35px;
 }
 
 .Name {
@@ -411,6 +416,7 @@ input {
     flex-direction: row;
 }
 
+
 .flexcolumn {
     flex-direction: column;
 }
@@ -464,7 +470,7 @@ ul {
         text-align: center;
     }
     .Title {
-        font-size: 30px;
+        font-size: 25px;
     }
  
     .menu-btn__burger {
@@ -565,7 +571,7 @@ ul {
 
     }
     .Title {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .widthHalf {

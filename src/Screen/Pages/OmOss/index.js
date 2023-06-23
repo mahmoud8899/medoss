@@ -7,20 +7,20 @@ import { Link } from 'react-router-dom'
 import { TheServices } from '../../Components/data/index'
 import { TheSlice } from '../../../Utils/Helps'
 import MyImage from '../../Components/ImageLazy'
-import { useLocation } from 'react-router-dom'
 
 
-const OmOss = () => {
+
+const OmOss = (props) => {
+
+    const { condation } = props
 
 
-    let Match = useLocation()?.pathname
-    let condation = Match?.toString() === '/ar' || Match?.toString() === '/ar/' ? true : false
 
     // options 
     // 1 Webbdesign 2- Webbutveckling 3-App Utveckling 4- SEO 5- ui and ux 6- email
     return (
         <div>
-            <Services />
+            <Services ChangeSprak={condation} />
 
             <div className='margin-bottomDev ' />
             <div className='flex flexrow  align-items flexwrap  widthNine marginAuto  space-between '>

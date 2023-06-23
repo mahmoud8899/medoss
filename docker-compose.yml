@@ -1,13 +1,13 @@
 version: '3'
 services:
    node-app:
-    image: mahmoud899/medoss:tagname
+    container_name : medososs_node
     build: 
       context: .
       dockerfile: Dockerfile
     ports:
-    - "4000:4000"
+    - "4001:4001"
     environment:
     - DOCKER_DEFAULT_PLATFORM=linux/amd64
-    - PORT=4000
+    - PORT=4001
 

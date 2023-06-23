@@ -3,32 +3,39 @@ import Contact from '../Contact'
 import { TheSEOdATA, TheseoTitle } from '../../Components/data/index'
 import MetaDecorator from '../../Components/Header'
 import MyImage from '../../Components/ImageLazy/index'
-import {TheSlice} from '../../../Utils/Helps'
+import { TheSlice } from '../../../Utils/Helps'
+
+import { useLocation } from 'react-router-dom'
+
+
+
 
 
 const TheSEO = () => {
+    let Match = useLocation()?.pathname
+    let condation = Match?.toString() === '/seo/ar' || Match?.toString() === '/seo/ar/' ? true : false
 
 
     return (
         <Fragment>
             <MetaDecorator
-                title={`Med Oss -${TheSEOdATA.title}`}
-                description={TheSlice(TheSEOdATA.des,Number(165))}
+                title={`Med Oss -${condation ? TheSEOdATA.title.AR : TheSEOdATA.title.EN}`}
+                description={TheSlice(condation ? TheSEOdATA.des.AR : TheSEOdATA.des.EN, Number(165))}
                 imageUrl={TheSEOdATA?.image}
-                imageAlt={TheSEOdATA?.title}
+                imageAlt={condation ? TheSEOdATA.title.AR : TheSEOdATA.title.EN}
 
             />
 
             <div className='flex  center align-items flexwrap  margin-topandbottom'>
-                <h1 className='Title font-family screenColor FirstLetter'>{TheseoTitle.title}</h1>
+                <h1 className={condation ? 'Title font-family screenColor' : 'Title font-family screenColor FirstLetter'}>{condation ? TheSEOdATA.title.AR : TheSEOdATA.title.EN}</h1>
             </div>
             <div className="padding">
-                <div className='flex flexrow space-between align-items flexwrap '>
+                <div className='flex flexrow space-between align-items flexwrap'>
                     <div className='firstwidth dev-size padding '>
-                        <h2 className='Title font-family screenColor'>{TheSEOdATA.title}</h2>
-                        <div className='margin-topandbottom '>
+                        <h2 className={condation ? 'text-align_right  Title font-family screenColor' : 'Title font-family screenColor'}>{condation ? TheSEOdATA.title.AR : TheSEOdATA.title.EN}</h2>
+                        <div className={condation ? 'text-align_right margin-topandbottom' : 'margin-topandbottom'}>
                             <span className='des font-family-des colordes'>
-                                {TheSEOdATA.des}
+                                {condation ? TheSEOdATA.des.AR : TheSEOdATA.des.EN}
                             </span>
 
                         </div>
@@ -39,13 +46,15 @@ const TheSEO = () => {
                         <MyImage
                             image={TheSEOdATA.image}
                             className='Image objectcover'
-                            alt={TheSEOdATA.title}
+                            alt={condation ? TheSEOdATA.title.AR : TheSEOdATA.title.EN}
                         />
                     </div>
                 </div>
 
                 <div className='margin-top-two LineX antherbackground' />
-                <Contact />
+                <Contact
+                    ChangeSprak={condation}
+                />
 
             </div>
 

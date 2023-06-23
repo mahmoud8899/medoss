@@ -3,26 +3,21 @@ import { data } from '../../Components/data/index'
 import { BiRightArrowAlt } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import MyImage from '../../Components/ImageLazy'
-import {useLocation} from 'react-router-dom'
 
 
 
 
-const FirstScreen = () => {
 
-
-    let Match = useLocation()?.pathname
-   let  condation =  Match?.toString() === '/ar' || Match?.toString() === '/ar/' ? true : false
-
+const FirstScreen = (props) => {
+    const {condation } = props
 
 
     
     return (
         <div className='flex flexrow space-between align-items flexwrap '>
 
-
             <div className='firstwidth dev-size padding '>
-                <h1 className='Title font-family screenColor'>{condation ?  data.title.AR : data.title.EN }</h1>
+                <h1 className={condation ?'text-align_right Title font-family screenColor' : 'Title font-family screenColor'}>{condation ?  data.title.AR : data.title.EN }</h1>
 
                 <div className={ condation ?'text-align_right margin-topandbottom ' : 'margin-topandbottom '} >
                     <span className='des font-family-des colordes'>
@@ -35,12 +30,12 @@ const FirstScreen = () => {
                 <div className='flex flexrow space-between align-items flexwrap margin-text'>
 
 
-                    <Link to='/services' className='Link WidthButtom antherbackground flex flexrow space-between align-items padding border-radius'>
+                    <Link to={condation ? '/services/ar/' :'/services/'} className='Link WidthButtom antherbackground flex flexrow space-between align-items padding border-radius'>
                         <span className='white Name font-family-name'>{condation ? data.Services.AR : data.Services.EN }</span>
                         <BiRightArrowAlt className='white _icons' />
                     </Link>
 
-                    <Link to='/contact' className='Link WidthButtom screenback flex flexrow space-between align-items padding border-radius'>
+                    <Link to={condation ? '/contact/ar/': '/contact/'} className='Link WidthButtom screenback flex flexrow space-between align-items padding border-radius'>
                         <span className='white Name font-family-name'>{condation ? data.meet.AR : data.meet.EN }</span>
                         <BiRightArrowAlt className='white _icons' />
                     </Link>

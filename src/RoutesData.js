@@ -36,7 +36,7 @@ export const routersArray = [
                 </div>}>
                     <Webbdesign />
                 </React.Suspense>,
-                path: '/web/',
+                path: '/web/ar?/',
 
             },
             {
@@ -45,7 +45,7 @@ export const routersArray = [
                 </div>}>
                     <AppScreen />
                 </React.Suspense>,
-                path: '/mobilapp/',
+                path: '/mobilapp/ar?/',
 
             },
 
@@ -53,7 +53,7 @@ export const routersArray = [
                 element: <React.Suspense fallback={<TheLoading />}>
                     <TheSEO />
                 </React.Suspense>,
-                path: '/seo/',
+                path: '/seo/ar?/',
 
             },
             {
@@ -62,7 +62,7 @@ export const routersArray = [
                 </div>}>
                     <Design />
                 </React.Suspense>,
-                path: '/design/',
+                path: '/design/ar?/',
 
             },
 
@@ -72,7 +72,7 @@ export const routersArray = [
                 </div>}>
                     <EmailMarketing />
                 </React.Suspense>,
-                path: '/e-postmarknadsforing/',
+                path: '/e-postmarknadsforing/ar?/',
 
             },
             {
@@ -83,7 +83,7 @@ export const routersArray = [
                     <ContactScreen />
 
                 </React.Suspense>,
-                path: '/contact/',
+                path: '/contact/ar?/',
 
             },
             {
@@ -92,7 +92,7 @@ export const routersArray = [
                 </div>}>
                     <ServicesScreen />
                 </React.Suspense>,
-                path: '/services/',
+                path: '/services/ar?/',
 
             },
             {

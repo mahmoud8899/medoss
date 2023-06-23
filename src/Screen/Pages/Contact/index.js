@@ -8,15 +8,14 @@ import { TheSelection } from '../../Components/data/index'
 import { ValtionMe } from '../../Components/Validation/index'
 import { IoClose, } from 'react-icons/io5'
 import { InilionState, MessageClose, sendData } from './response'
-import { useLocation } from 'react-router-dom'
 
 
 
-const Contact = () => {
 
+const Contact = (props) => {
 
-    let Match = useLocation()?.pathname
-    let condation = Match?.toString() === '/ar' || Match?.toString() === '/ar/' ? true : false
+    const { ChangeSprak } = props
+
 
 
     const [data, setData] = useState(InilionState)
@@ -70,10 +69,10 @@ const Contact = () => {
 
         <div className='firstwidth dev-size padding'>
 
-            <h2 className='Title font-family screenColor h1align'> {condation ? ListContact.title.AR : ListContact.title.EN}</h2>
-            <div className={condation ? 'text-align_right margin-topandbottomOne h1align':'margin-topandbottomOne h1align'}>
+            <h2 className={ChangeSprak ? 'text-align_right  Title font-family screenColor' : 'Title font-family screenColor h1align'}> {ChangeSprak ? ListContact.title.AR : ListContact.title.EN}</h2>
+            <div className={ChangeSprak ? 'text-align_right margin-topandbottomOne' : 'margin-topandbottomOne h1align'}>
                 <span className='des font-family-des colordes'>
-                    {condation ? ListContact.des.AR : ListContact.des.EN} {ListContact.telephone}
+                    {ChangeSprak ? ListContact.des.AR : ListContact.des.EN} {ListContact.telephone}
                 </span>
 
             </div>
@@ -89,7 +88,7 @@ const Contact = () => {
                     <div className=''>
                         <h1 className='Title font-family white'>Tack!</h1>
                         <p className='des font-family-des white'>
-                            Ditt meddelande är nu skickat, vi återkommer så snart vi kan :)
+                            {ChangeSprak ? 'تم إرسال رسالتك الآن ، وسنعاود الاتصال بك في أقرب وقت ممكن ' : 'Ditt meddelande är nu skickat, vi återkommer så snart vi kan :)'}
                         </p>
                     </div>
                 </div>
@@ -100,8 +99,8 @@ const Contact = () => {
                             onChange={(e) => setData({ ...data, thehelp: e.target.value })}
                             className='Input border-radius border placeholder  borderSolid Name font-family-name'>
                             {TheSelection?.map((item) => (
-                                <option key={item?._id} value={item?.name}
-                                >{item.name}</option>
+                                <option key={item?._id} value={ChangeSprak ? item?.name.AR : item?.name?.EN}
+                                >{ChangeSprak ? item.name.AR : item?.name.EN}</option>
                             ))}
 
                         </select>
@@ -114,7 +113,7 @@ const Contact = () => {
                         <div className='margin-text' />
                         <TheInput
                             type='email'
-                            placeholder='E-postadress*'
+                            placeholder={ChangeSprak ? 'عنوان البريد الإلكتروني' : 'E-postadress*'}
                             className='Input border-radius border placeholder Name font-family-name borderSolid'
                             value={data.email}
                             onChange={(e) => setData({ ...data, email: e.target.value })}
@@ -124,7 +123,7 @@ const Contact = () => {
                         <div className='margin-text' />
                         <TheInput
                             type='text'
-                            placeholder='Rubrik '
+                            placeholder={ChangeSprak ? 'عنوان' : 'Rubrik '}
                             className='Input border-radius border placeholder Name font-family-name borderSolid'
                             value={data.theobject}
                             onChange={(e) => setData({ ...data, theobject: e.target.value })}
@@ -138,7 +137,7 @@ const Contact = () => {
                             className='widthonly border-radius border placeholder Name font-family-name borderSolid'
                             value={data.message}
                             rows="9"
-                            placeholder="Meddelande"
+                            placeholder={ChangeSprak ? "رسالة" : "Meddelande"}
                             onChange={(e) => setData({ ...data, message: e.target.value })}
 
                         >

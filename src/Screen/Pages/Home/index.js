@@ -7,14 +7,34 @@ import MetaDecorator from '../../Components/Header'
 import Contact from '../Contact'
 import TheLoading from '../../Components/Login'
 import { data } from '../../Components/data/index'
-
+import { useLocation } from 'react-router-dom'
+  
 
 const HomeScreen = () => {
 
 
+    let Match = useLocation()?.pathname
+    let condation = Match?.toString() === '/ar' || Match?.toString() === '/ar/' ? true : false
 
 
 
+
+    // const xp = window.onscroll = function () {
+
+    //     // setAddTop('postion-top')
+    //     // window.scrollY >= NavBarScroll?.current?.offsetTop ? setAddTop('newPox') : setAddTop('postion-top')
+
+    //     // setHiddenNavBar(false)
+    //     if (window.scrollY >= 30) {
+    //         console.log(window.scrollY)
+    //         // return setHiddenNavBar(true)
+    //     } else {
+
+    //         // return setHiddenNavBar(false)
+    //     }
+    // }
+
+    // xp()
     
 
 
@@ -23,11 +43,10 @@ const HomeScreen = () => {
         <Fragment>
 
             <MetaDecorator
-                title='Med Oss - Professionell Webbyrå i sundsvall'
-                description={data?.title}
+                title={`Med Oss - ${condation ? data.title.AR : 'Professionell Webbyrå i sundsvall'}`}
+                description={condation ? data?.title?.AR :data?.title?.EN }
                 imageUrl={data?.image}
-                imageAlt={data?.title}
-
+                imageAlt={condation ? data?.title?.AR :data?.title?.EN }
             />
 
 
@@ -39,7 +58,7 @@ const HomeScreen = () => {
 
 
                 <React.Suspense fallback={<TheLoading />}>
-                    <FirstScreen />
+                    <FirstScreen condation={condation} />
                 </React.Suspense>
 
 
@@ -47,7 +66,7 @@ const HomeScreen = () => {
                 <div className='margin-bottomDev LineX antherbackground' />
 
 
-                <OmOss />
+                <OmOss condation={condation} />
 
                 <div className='margin-bottomDev ' />
                 <div className='margin-bottomDev LineX antherbackground' />
@@ -60,7 +79,7 @@ const HomeScreen = () => {
 
                 <div className='margin-bottomDev LineX antherbackground' />
 
-                <Contact />
+                <Contact ChangeSprak={condation} />
 
 
             </div>

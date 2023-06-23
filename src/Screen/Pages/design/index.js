@@ -5,28 +5,31 @@ import MetaDecorator from '../../Components/Header'
 import { TheSlice } from '../../../Utils/Helps'
 import MyImage from '../../Components/ImageLazy/index'
 
-
+import { useLocation } from 'react-router-dom'
+  
 const Design = () => {
 
+    let Match = useLocation()?.pathname
+    let condation = Match?.toString() === '/design/ar' || Match?.toString() === '/design/ar/' ? true : false
 
     return (
         <Fragment>
             <MetaDecorator
-                title={`Med Oss -${TheDesign[0]?.title}`}
-                description={TheSlice(DesignTitle?.des, Number(165))}
+                title={`Med Oss -${condation ? TheDesign[0]?.title.AR : TheDesign[0]?.title.EN}`}
+                description={TheSlice(condation ? DesignTitle?.des.AR : DesignTitle?.des.EN, Number(165))}
                 imageUrl={DesignTitle?.image}
-                imageAlt={DesignTitle?.title}
+                imageAlt={condation ? DesignTitle?.title.AR : DesignTitle?.title.EN}
 
             />
             <div className="padding">
 
-                <div className='flex  center align-items flexwrap' >
-                    <h1 className='Title font-family screenColor FirstLetter h1align'>
-                        {DesignTitle?.title}
+                <div className='flex flexcolumn center align-items flexwrap' >
+                    <h1 className={condation ?'Title font-family screenColor ' :'Title font-family screenColor FirstLetter h1align'}>
+                    {condation ? DesignTitle?.title.AR : DesignTitle?.title.EN}
                     </h1>
                     <div className='margin-topandbottomOne h1align'>
                         <span className='des font-family-des colordes'>
-                            {DesignTitle.des}
+                            {condation ? DesignTitle?.des.AR : DesignTitle?.des.EN}
                         </span>
 
                     </div>
@@ -37,11 +40,11 @@ const Design = () => {
                     <div className='flex flexrow space-between align-items flexwrap' key={index}>
 
                         <div className='firstwidth dev-size padding'>
-                            <h2 className='Title font-family screenColor FirstLetter h1align'>{item.title}</h2>
+                            <h2 className={condation ? 'text-align_right Title font-family screenColor ':'Title font-family screenColor FirstLetter h1align'}>{condation ?item.title.AR : item.title.EN}</h2>
 
-                            <div className='margin-topandbottomOne '>
+                            <div className={condation ? 'text-align_right margin-topandbottomOne' : 'margin-topandbottomOne h1align'}>
                                 <span className='des font-family-des colordes'>
-                                    {item.des}
+                                    {condation ? item.des.AR : item.des.EN}
                                 </span>
 
                             </div>
@@ -52,7 +55,7 @@ const Design = () => {
                             <MyImage
                                 image={item.image}
                                 className='Image objectcover  Imageanimation'
-                                alt={item?.title}
+                                alt={condation ?item.title.AR : item.title.EN}
                             />
                         </div>
 
@@ -63,7 +66,7 @@ const Design = () => {
 
 
                 <div className='margin-top-two' />
-                <Contact />
+                <Contact  ChangeSprak={condation} />
 
             </div>
         </Fragment>

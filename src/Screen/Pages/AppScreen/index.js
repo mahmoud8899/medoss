@@ -2,27 +2,31 @@
 import React, { Fragment } from 'react'
 import TheImage from '../../Components/TheImage'
 import Contact from '../Contact'
-import { AppMobile,  } from '../../Components/data/index'
+import { AppMobile, } from '../../Components/data/index'
 import MetaDecorator from '../../Components/Header/index'
 import { TheSlice } from '../../../Utils/Helps'
 import MyImage from '../../Components/ImageLazy/index'
+import { useLocation } from 'react-router-dom'
 
 
 
 
- const AppScreen = () => {
+const AppScreen = () => {
+
+    let Match = useLocation()?.pathname
+    let condation = Match?.toString() === '/mobilapp/ar' || Match?.toString() === '/mobilapp/ar/' ? true : false
 
     return (
         <Fragment>
 
             <MetaDecorator
-                title={`Med Oss -${AppMobile.title}`}
-                description={TheSlice(AppMobile?.des, Number(165))}
+                title={`Med Oss -${condation ? AppMobile.title.AR : AppMobile.title.EN}`}
+                description={TheSlice(condation ? AppMobile?.des.AR : AppMobile.des.EN, Number(165))}
                 imageUrl={AppMobile?.image}
-                imageAlt={AppMobile?.title}
+                imageAlt={condation ? AppMobile.title.AR : AppMobile.title.EN}
 
             />
-           
+
 
             <div className='padding'>
 
@@ -31,10 +35,10 @@ import MyImage from '../../Components/ImageLazy/index'
 
 
                     <div className='firstwidth dev-size padding '>
-                        <h1 className='Title font-family screenColor h1align'>{AppMobile.title}</h1>
-                        <div className='margin-topandbottom '>
+                        <h1 className={condation ? 'text-align_right Title font-family screenColor ': 'Title font-family screenColor h1align'}>{condation ? AppMobile.title.AR : AppMobile.title.EN}</h1>
+                        <div className={condation ? 'text-align_right margin-topandbottom' : 'margin-topandbottom'}>
                             <span className='des font-family-des colordes'>
-                                {AppMobile.des}
+                                {condation ? AppMobile.des.AR : AppMobile.des.EN}
                             </span>
 
                         </div>
@@ -45,13 +49,13 @@ import MyImage from '../../Components/ImageLazy/index'
                         <MyImage
                             image={AppMobile.image}
                             className='Image objectcover Imageanimation'
-                            alt={AppMobile.title}
+                            alt={condation ? AppMobile.title.AR : AppMobile.title.EN}
                         />
                     </div>
                 </div>
                 <div className='margin-top-two LineX antherbackground' />
 
-                <Contact />
+                <Contact ChangeSprak={condation} />
 
 
             </div>

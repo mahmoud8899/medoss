@@ -5,12 +5,16 @@ import Contact from '../Contact'
 import { TheEmailMarketing, EmailTile } from '../../Components/data/index'
 import MyImage from '../../Components/ImageLazy/index'
 import MetaDecorator from '../../Components/Header'
-import { TheSlice } from '../../../Utils/Helps'
+
+import { useLocation } from 'react-router-dom'
+
+
 
 const EmailMarketing = () => {
 
 
-
+    let Match = useLocation()?.pathname
+    let condation = Match?.toString() === '/e-postmarknadsforing/ar' || Match?.toString() === '/e-postmarknadsforing/ar/' ? true : false
 
 
 
@@ -19,30 +23,29 @@ const EmailMarketing = () => {
         <Fragment>
 
             <MetaDecorator
-                title={`Med Oss -${EmailTile.title}`}
-                description={EmailTile.des}
+                title={`Med Oss -${condation ? EmailTile.title.AR : EmailTile.title.EN}`}
+                description={condation ? EmailTile.des.AR : EmailTile.des.EN}
                 imageUrl={EmailTile.image}
-                imageAlt={EmailTile.title}
+                imageAlt={condation ? EmailTile.title.AR : EmailTile.title.EN}
 
             />
 
 
 
             <div className='padding'>
-                <div className='flex  center align-items flexwrap  margin-topandbottom h1align'>
-                    <h1 className='Title font-family screenColor FirstLetter' >{EmailTile.h1title}</h1>
+                <div className='flex center align-items flexwrap  margin-topandbottom h1align'>
+                    <h1 className={condation ? 'Title font-family screenColor':'Title font-family screenColor FirstLetter'} >{condation ? EmailTile.h1title.AR : EmailTile.h1title.EN}</h1>
 
                 </div>
 
-                {
-                    TheEmailMarketing.map((item, index) => (
+                {TheEmailMarketing.map((item, index) => (
                         <div className='flex flexrow space-between align-items flexwrap' key={index}>
 
                             <div className='firstwidth dev-size padding '>
-                                <h2 className='Title font-family screenColor FirstLetter'>{item.title}</h2>
-                                <div className='margin-topandbottom '>
+                                <h2 className={condation ? 'text-align_right Title font-family screenColor ' : 'Title font-family screenColor FirstLetter'}>{condation ? item.title.AR : item.title.EN}</h2>
+                                <div className={condation ? 'text-align_right margin-topandbottom' : 'margin-topandbottom'}>
                                     <span className='des font-family-des colordes'>
-                                        {item.des}
+                                        {condation ?item.des.AR : item.des.EN}
                                     </span>
 
                                 </div>
@@ -53,7 +56,7 @@ const EmailMarketing = () => {
                                 <MyImage
                                     image={item.image}
                                     className='Image objectcover Imageanimation'
-                                    alt={item.title}
+                                    alt={condation ? item.title.AR : item.title.EN}
                                 />
                             </div>
 
@@ -64,7 +67,7 @@ const EmailMarketing = () => {
 
 
 
-                <Contact />
+                <Contact ChangeSprak={condation} />
 
 
             </div>

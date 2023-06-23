@@ -5,6 +5,6 @@ COPY package.json .
 RUN npm install 
 # adding bundle file to working dir
 COPY . .
-EXPOSE 4000 
+EXPOSE 4001
 # start static server
 CMD npm run server:backend

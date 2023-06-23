@@ -6,35 +6,34 @@ import { Link } from 'react-router-dom'
 import { ListNavBar } from '../../Components/data/index'
 import { InfoContact } from '../../Components/data/index'
 import { useLocation } from 'react-router-dom'
-
-
 import { FaFacebook, FaWhatsappSquare } from 'react-icons/fa'
 
 const Footer = () => {
 
 
     let info = {
-        phone : '+46709208520'
+        phone: '+46709208520'
     }
 
-    let Match = useLocation()?.pathname
-    let condation = Match?.toString() === '/ar' || Match?.toString() === '/ar/' ? true : false
 
+
+    let Match = useLocation()?.pathname
+    let condation = Match.indexOf('/ar') === -1 ? false : true
 
     return (
         <div className='flex flexrow flexwrap padding background space-between ' >
 
             <div className='widthThre  margin-text ' >
-                <Logo />
+                <Logo condation={condation} />
             </div>
 
             <div className='widthThre  margin-text'>
 
                 <ul >
                     {ListNavBar?.map((item, index) => (
-                        <Link to={condation ? item.name.AR :item.link.EN} className='Link whitecolor' key={index}>
+                        <Link to={condation ? item.link.AR : item.link.EN} className='Link whitecolor' key={index}>
                             <li className='Name font-family-name margin-topandbottomOne'>
-                                {condation? item.name.AR : item.name.EN}
+                                {condation ? item.name.AR : item.name.EN}
                             </li>
                         </Link>
                     ))}
@@ -74,7 +73,7 @@ const Footer = () => {
             </div>
 
 
-   
+
             <div className='whatapp flex flexrow-reverse'>
                 <div className='placeholder' >
                     <Link to={`https://wa.me/${info.phone}`} >

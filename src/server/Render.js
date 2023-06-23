@@ -24,7 +24,7 @@ export default function Render(req) {
   const helmet = Helmet.renderStatic()
 
   const html = `<!DOCTYPE html>
-        <html lang="sv-SE">
+        <html lang='ar'>
 
         <head>
         <title>Med Oss</title>      
