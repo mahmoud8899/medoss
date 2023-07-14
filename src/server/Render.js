@@ -33,10 +33,6 @@ export default function Render(req) {
         <meta name="theme-color" content="#d8bc64" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">   
         <link rel="icon" href=${Icon} />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap" rel="stylesheet">
-
-        <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@500&display=swap" rel="stylesheet">
         <meta name="google-site-verification" content="MefkQMxS9LeayJ8MPstMgO85x8jW5Y6deeqVmA4DGGs" />
         ${helmet.title.toString()}
         ${helmet.meta.toString()}

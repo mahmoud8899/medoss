@@ -5,6 +5,28 @@
     transform-style: preserve-3d;
     perspective: 500px;
 }
+
+@font-face {
+    font-family: Font_Title;
+    src: url(../Fonts/TiltWarp-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: Font_des;
+    src: url(../Fonts/des/NotoSansHK-Medium.ttf);
+  }
+
+.font-family {
+    font-family: Font_Title;
+}
+.font-family-des {
+    font-family: Font_des
+}
+.font-family-name {
+    font-family: Font_des
+}
+
+
 .whatapp{
     width: 100%;
 }
@@ -333,15 +355,7 @@ input {
     text-transform: capitalize;
 }
 
-.font-family {
-    font-family: 'Tilt Warp', cursive;
-}
-.font-family-des {
-    font-family: 'Noto Sans HK', sans-serif;
-}
-.font-family-name {
-    font-family: 'Noto Sans HK', sans-serif;
-}
+
 .Title {
     font-size: 35px;
 }
