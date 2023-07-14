@@ -43,11 +43,6 @@ app.get('/*', async (req, res) => {
 
 
   const routes = matchRoutes(routersArray, req.path)
-
-
-
-
-
   const promises = routes?.map(({ route }) => {
     return route?.loadData ? route?.loadData(dispatch, req.url) : null;
 
@@ -60,8 +55,6 @@ app.get('/*', async (req, res) => {
     }
     return null;
   });
-
-
   // console.log('promises',promises)
   Promise.all(promises).then(() => {
 
@@ -81,7 +74,7 @@ app.get('/*', async (req, res) => {
     .catch((error) => {
       res.status(404);
       res.send(error.message)
-    });
+  });
 
 });
 
